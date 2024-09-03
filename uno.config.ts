@@ -8,7 +8,7 @@ export default defineConfig({
       fonts: {
         sans: ['Roboto', 'Noto Sans JP', 'Noto Emoji'],
         mono: ['Roboto Mono'],
-        alpha: ['ABeeZee'],
+        strong: ['ABeeZee', 'Noto Serif JP'],
       },
     }),
     presetIcons(),
