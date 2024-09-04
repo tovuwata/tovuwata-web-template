@@ -1,47 +1,50 @@
-# Astro Starter Kit: Minimal
+# 🚀 Tovuwata Web Template
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Tovuwata公式ウェブサイト用のテンプレートです。このテンプレートは、Astroフレームワークを使用して開発されており、簡単にカスタマイズ可能です。関係者以外の方も自由にご利用いただけますので、ぜひご活用ください。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 概要
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+このテンプレートは、Tovuwataのブランドやサービスを紹介するために設計されています。デザインやレイアウトを変更することで、独自のスタイルに合わせたウェブサイトを作成できます。
 
-## 🚀 Project Structure
+## 特徴
 
-Inside of your Astro project, you'll see the following folders and files:
+- **軽量で高速**: Astroを使用しているため、ページの読み込み速度が速く、ユーザーエクスペリエンスを向上させます。
+- **レスポンシブデザイン**: モバイルデバイスやタブレットでも快適に表示されるように設計されています。
+- **カスタマイズ性**: CSSやJavaScriptを自由に編集でき、自分のニーズに合わせたデザインが可能です。
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 使用方法
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. **リポジトリのクローン**:
+   ```bash
+   git clone https://github.com/tovuwata/tovuwata-web-template.git
+   cd tovuwata-web-template
+   ```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+2. **依存関係のインストール**:
+   ```bash
+   bun install
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+3. **開発サーバーの起動**:
+   ```bash
+   bun run dev
+   ```
 
-## 🧞 Commands
+4. **ブラウザで確認**:
+   開発サーバーが起動したら、ブラウザで `http://localhost:3000` にアクセスしてください。
 
-All commands are run from the root of the project, from a terminal:
+## 開発チーム
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+このテンプレートは[Tovuwata](https://github.com/tovuwata)の開発チームによって作成されました。私たちは、より良いウェブ体験を提供するために努力しています。
 
-## 👀 Want to learn more?
+### Tovuwataについて
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+詳しくは[こちら](https://github.com/tovuwata)をご覧ください。
+
+## 貢献
+
+貢献を歓迎します！バグの報告や機能の提案は、GitHubのイシューを通じて行ってください。また、プルリクエストも大歓迎です。
+
+## ライセンス
+
+このプロジェクトはMITライセンスの下で公開されています。詳細については、LICENSEファイルをご覧ください。
