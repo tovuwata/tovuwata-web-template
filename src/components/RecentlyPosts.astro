@@ -1,0 +1,24 @@
+---
+import { getPosts } from "../lib/posts.astro";
+import dayjs from 'dayjs';
+
+let posts = await getPosts();
+---
+
+<div class="px-8 py-4 mt-8 border rounded">
+  <h2 class="mb-4 text-2xl font-semibold">最近の投稿</h2>
+  <ul class="cardParent">
+    {posts.slice(0, 6).map((post) => (
+      <a href={post.url}>
+        <div class="card">
+          <img class="object-cover w-full h-40" src={post.frontmatter.thumbnail ?? '/img/andrew-neel-cckf4TsHAuw-unsplash.jpg'} alt="サムネイル" />
+          <div class="p-4">
+            <h1 class="text-2xl font-semibold">{post.frontmatter.title}</h1>
+            <p class="text-lg">{post.frontmatter.description}</p>
+            <p class="text-lg">{post.frontmatter.author}</p>
+            <p class="text-lg">{dayjs(post.frontmatter.date).format('YYYY年MM月DD日')}</p>
+          </div>
+        </div>
+      </a>
+    ))}
+</div>
