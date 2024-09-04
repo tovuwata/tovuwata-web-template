@@ -15,6 +15,7 @@
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "astro": "^4.15.2",
+    "astro-embed": "^0.7.2",
     "astro-seo": "^0.8.4",
     "github-markdown-css": "^5.6.1",
     "typescript": "^5.5.4"
