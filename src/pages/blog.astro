@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getPosts } from "../lib/posts.astro";
+import dayjs from 'dayjs';
+
+let posts = await getPosts();
+---
+
+<Layout
+  title="ブログ"
+  description="ブログ記事一覧"
+  thumbnail="/img/andrew-neel-cckf4TsHAuw-unsplash.jpg"
+>
+  <div class="mx-8 my-4 mt-16">
+    <h1 class="mb-4 text-3xl font-bold">ブログ</h1>
+    <div class="cardParent">
+      {posts.length < 1
+        ? <p>記事がありません。</p>
+        : posts.map((post) => (
+          <a href={post.url}>
+            <div class="card">
+              <img class="object-cover w-full h-40" src={post.frontmatter.thumbnail ?? '/img/andrew-neel-cckf4TsHAuw-unsplash.jpg'} alt="サムネイル" />
+              <div class="p-4">
+                <h1 class="text-2xl font-semibold">{post.frontmatter.title}</h1>
+                <p class="text-lg">{post.frontmatter.description}</p>
+                <p class="text-lg">{post.frontmatter.author}</p>
+                <p class="text-lg">{dayjs(post.frontmatter.date).format('YYYY年MM月DD日')}</p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
