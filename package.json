@@ -17,6 +17,7 @@
     "astro": "^4.15.2",
     "astro-embed": "^0.7.2",
     "astro-seo": "^0.8.4",
+    "dayjs": "^1.11.13",
     "github-markdown-css": "^5.6.1",
     "typescript": "^5.5.4"
   },
