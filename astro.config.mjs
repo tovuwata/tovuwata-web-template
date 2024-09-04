@@ -24,4 +24,6 @@ export default defineConfig({
       display: 'standalone',
     }),
   ],
+  site: "https://localhost:4321",
+  base: "/",
 });
