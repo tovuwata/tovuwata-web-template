@@ -1,0 +1,25 @@
+---
+import type { MDXInstance } from "astro";
+
+export const getPosts = async () => {
+  let posts: MDXInstance<Record<string, any>>[] = [];
+  try {
+    posts = await Astro.glob('../pages/blog/*.mdx');
+    // アルファベット順（a-z）に並び替え
+    posts.sort((a, b) => {
+      if (a.frontmatter.title < b.frontmatter.title) return -1;
+      if (a.frontmatter.title > b.frontmatter.title) return 1;
+      return 0;
+    });
+    // 日付順（新-旧）に並び替え
+    posts.sort((a, b) => {
+      if (a.frontmatter.date < b.frontmatter.date) return 1;
+      if (a.frontmatter.date > b.frontmatter.date) return -1;
+      return 0;
+    });
+  } catch (error) {
+    posts = [];
+  }
+  return posts;
+}
+---
