@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const socialMedia = [
+  {
+    name: "X",
+    url: "https://x.com/tovuwata",
+    username: "@tovuwata",
+    icon: "i-simple-icons:x",
+  },
+  {
+    name: "YouTube",
+    url: "https://youtube.com/@tovuwata",
+    username: "@tovuwata",
+    icon: "i-simple-icons:youtube",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/tovuwata",
+    username: "@tovuwata",
+    icon: "i-simple-icons:github",
+  },
+  {
+    name: "Zenn",
+    url: "https://zenn.com/p/tovuwata",
+    icon: "i-simple-icons:zenn",
+  },
+  {
+    name: "Bluesky",
+    url: "https://tovuwata.bsky.social",
+    username: "@tovuwata.bsky.social",
+    icon: "i-simple-icons:bluesky",
+  },
+  {
+    name: "Misskey",
+    url: "https://misskey.io/@tovuwata",
+    username: "@tovuwata@misskey.io",
+    icon: "i-simple-icons:misskey",
+  },
+  {
+    name: "Mastodon",
+    url: "https://fedibird.com/@tovuwata",
+    username: "@tovuwata@fedibird.com",
+    icon: "i-simple-icons:mastodon",
+  },
+  {
+    name: "Peertube",
+    url: "https://fedimovie.com/@tovuwata",
+    username: "@tovuwata@fedimovie.com",
+    icon: "i-simple-icons:peertube",
+  },
+];
+---
+
+<Layout
+  title="ソーシャルメディア"
+  description="ソーシャルメディア一覧"
+  thumbnail="/img/adem-ay-Tk9m_HP4rgQ-unsplash.jpg"
+>
+  <div class="mx-8 my-4 mt-16">
+    <h1 class="mb-4 text-3xl font-bold">ソーシャルメディア</h1>
+    <div class="cardParent">
+      {socialMedia.length < 1
+        ? <p>メディアがありません。</p>
+        : socialMedia.map((media) => (
+          <a href={media.url}>
+            <div class="card">
+              <div class={`bg-cover w-full h-40 ${media.icon}`} />
+              <div class="p-4">
+                <h1 class="text-2xl font-semibold">{media.name}</h1>
+                <p class="text-lg min-h-7">{media.username}</p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
