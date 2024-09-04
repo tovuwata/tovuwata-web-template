@@ -1,0 +1,30 @@
+---
+import RecentlyPosts from "../components/RecentlyPosts.astro";
+import Layout from "./Layout.astro";
+import 'github-markdown-css/github-markdown-dark.css';
+import dayjs from 'dayjs';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout
+  title={`${frontmatter.title} - ブログ`}
+  description={frontmatter.description}
+  thumbnail={frontmatter.thumbnail}
+>
+  <div class="box-border mx-8 mt-16">
+    <div class="pb-4 mb-4 border-b">
+      <img class="object-cover w-full rounded-t-full rounded-bl-full h-80" src={frontmatter.thumbnail ?? '/img/andrew-neel-cckf4TsHAuw-unsplash.jpg'} alt="サムネイル" />
+      <h1 class="mt-4 text-3xl font-bold">{frontmatter.title}</h1>
+      <p class="text-xl">{frontmatter.description}</p>
+      <div class="flex space-x-4">
+        <p>{dayjs(frontmatter.date).format('YYYY年MM月DD日')}</p>
+        <p>{frontmatter.author}</p>
+      </div>
+    </div>
+    <div class="markdown-body bg-transparent!">
+      <slot />
+    </div>
+    <RecentlyPosts />
+  </div>
+</Layout>
