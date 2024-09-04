@@ -1,16 +1,28 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="トップ"
+  description="トップページ"
+  thumbnail="/img/michael-marsh-IWWlv84VE7M-unsplash.jpg"
+>
+  <link rel="image" href="/img/michael-marsh-IWWlv84VE7M-unsplash.jpg" />
+  <div id="top" class="h-screen bg-cover bg-[url('/img/michael-marsh-IWWlv84VE7M-unsplash.jpg')]">
+    <div class="flex items-center justify-center w-full h-full text-white backdrop-blur-sm">
+      <div class="items-center justify-center w-3/4">
+        <div class="px-4 py-2 text-left font-strong backdrop-blur-md">
+          <h1
+            class="flex text-6xl text-transparent font-1000 bg-gradient-to-rb from-green-600 to-blue-600 bg-clip-text"
+          >
+            ようこそ Welcome<div class="i-fluent-emoji:party-popper"/>
+          </h1>
+          <h2 class="mb-8 text-5xl font-semibold">テキスト</h2>
+        </div>
+        <a class="button" href="/projects">
+          <div class="i-fluent-emoji:rocket animate-bounce w-3em h-3em"/>プロジェクトを見る
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
