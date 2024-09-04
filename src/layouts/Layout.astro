@@ -1,0 +1,91 @@
+---
+import { SEO } from 'astro-seo';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import './app.css';
+
+const { title, description, thumbnail } = Astro.props;
+
+const generateTitle = (title: string) => {
+  if (title?.toLowerCase().includes('tovuwata')) return title;
+  return `${title} - Tovuwata`;
+};
+---
+
+<html lang="ja">
+  <head>
+    <SEO
+      charset='utf-8'
+      title={generateTitle(title)}
+      description=''
+      openGraph={{
+        basic: {
+          title: generateTitle(title),
+          type: 'website',
+          image: thumbnail ?? '/img/andrew-neel-cckf4TsHAuw-unsplash.jpg',
+        },
+      }}
+      twitter={{
+        creator: "@tovuwata",
+      }}
+      extend={{
+        link: [
+          {
+            rel: "icon",
+            type: "image/svg+xml",
+            href: "/favicon.ico",
+          },
+          {
+            rel: "sitemap",
+            href: "/sitemap-index.xml",
+          },
+          {
+            rel: "alternate",
+            type: "application/rss+xml",
+            href: "/rss.xml",
+            title: "RSSフィード"
+          },
+          {
+            rel: "me",
+            href: "https://fedibird.com/@tovuwata",
+          },
+          {
+            rel: "me",
+            href: "https://misskey.io/@tovuwata",
+          },
+        ],
+        meta: [
+          {
+            name: "twitter:image",
+            content: thumbnail ?? '/img/andrew-neel-cckf4TsHAuw-unsplash.jpg',
+          },
+          {
+            name: "twitter:title",
+            content: generateTitle(title),
+          },
+          {
+            name: "twitter:description",
+            content: description,
+          },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0",
+          },
+          {
+            name: "generator",
+            content: Astro.generator,
+          },
+        ],
+      }}
+    />
+  </head>
+  <body
+    class="min-h-screen overflow-x-hidden font-sans text-gray-200 bg-black selection:text-orange-600 selection:bg-cyan-300"
+  >
+    <Header />
+    <main class="mb-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
