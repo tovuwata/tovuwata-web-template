@@ -1,0 +1,13 @@
+#top {
+  animation: bg-slide 10s infinite;
+}
+
+@keyframes bg-slide {
+  0%,
+  100% {
+    background-position-y: 50%;
+  }
+  50% {
+    background-position-y: 100%;
+  }
+}
