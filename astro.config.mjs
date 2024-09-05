@@ -23,7 +23,12 @@ export default defineConfig({
       background_color: '#000000',
       display: 'standalone',
     }),
+    partytown({
+      config: {
+        forward: ['dataLayer.push'],
+      },
+    }),
   ],
-  site: "https://localhost:4321",
-  base: "/",
+  site: 'https://localhost:4321',
+  base: '/',
 });
