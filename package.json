@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^2.2.243",
-    "@unocss/reset": "^0.62.3",
+    "@unocss/reset": "^0.63.1",
     "astro-robots-txt": "^1.0.0",
     "astro-webmanifest": "^1.0.0",
     "unocss": "^0.62.3"
